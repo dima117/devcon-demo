@@ -5,6 +5,7 @@
 
       return {
         block: 'page',
+        mods: { theme: 'islands' },
         title: title,
         styles: [{ elem: 'css', url: basePath + 'default.min.css' }],
         scripts: [{ elem: 'js', url: basePath + 'default.min.js' }],

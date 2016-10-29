@@ -1,6 +1,6 @@
 ([{
-  mustDeps: [
-    {block: 'page'},
+  shouldDeps: [
+    {block: 'page', mods: { theme: 'islands' }},
     {block: 'todo'}
   ]
 }]);
