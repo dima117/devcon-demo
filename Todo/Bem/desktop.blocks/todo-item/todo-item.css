@@ -1,6 +1,7 @@
 .todo-item {
   padding-bottom: 10px;
   transition: opacity 200ms ease;
+  user-select: none;
 }
 
 .todo-item_done {
