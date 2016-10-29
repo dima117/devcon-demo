@@ -1,3 +1,3 @@
 ﻿exports.blocks = [
-    { name: 'example' }
+    { name: 'todo-list' }
 ];
