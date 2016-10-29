@@ -17,7 +17,7 @@
 ```
 
 Ручки:
-- добавить: <http://localhost:28641/Home/Add?text=Посмотреть%20телевизор>
-- изменнить состояние: <http://localhost:28641/Home/SetState/71e36598-b623-44b5-8b81-4adc9c26b72e?done=true>
-- удалить: <http://localhost:28641/Home/Delete/71e36598-b623-44b5-8b81-4adc9c26b72e>
+- добавить: <http://todo.ecm7.ru/Home/Add?text=Посмотреть%20телевизор>
+- изменнить состояние: <http://todo.ecm7.ru/Home/SetState/71e36598-b623-44b5-8b81-4adc9c26b72e?done=true>
+- удалить: <http://todo.ecm7.ru/Home/Delete/71e36598-b623-44b5-8b81-4adc9c26b72e>
 
