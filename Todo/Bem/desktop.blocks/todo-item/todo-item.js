@@ -5,27 +5,27 @@ modules.define(
 
 provide(BEMDOM.decl({ block: this.name, baseBlock: Control }, {
 
-    onSetMod : {
-        'js' : {
-            'inited' : function() {
+    onSetMod: {
+        'js': {
+            'inited': function() {
                 this._trigger = this.findBlockOn('trigger', 'checkbox');
                 this._delete = this.findBlockOn('delete', 'button');
 
                 this._trigger.on('change', function (_, state) {
-                  this._toggleItem(this.params.id, state);
+                  this._toggleItem(state);
                 }, this);
 
                 this._delete.on('click', function() {
-                  this._deleteItem(this.params.id);
+                  this._deleteItem();
                 }, this);
             }
         },
     },
 
-    _toggleItem: function (id, state) {
+    _toggleItem: function (state) {
       var _this = this;
       var xhr = $.ajax({
-        url: 'http://todo.ecm7.ru/Home/SetState/' + id,
+        url: _this.params.state,
         method: 'GET',
         data: { done: state }
       });
@@ -35,14 +35,16 @@ provide(BEMDOM.decl({ block: this.name, baseBlock: Control }, {
       });
     },
 
-    _deleteItem: function(id) {
+    _deleteItem: function() {
       var _this = this;
       var xhr = $.ajax({
-        url: 'http://todo.ecm7.ru/Home/Delete/' + id,
+        url: _this.params.delete,
         method: 'GET'
       });
 
       xhr.success(function () {
+        _this._delete.un('click');
+        _this._trigger.un('change');
         BEMDOM.destruct(_this.domElem);
       });
     }

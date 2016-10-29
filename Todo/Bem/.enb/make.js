@@ -22,8 +22,8 @@ module.exports = function(config) {
             [techs.fileProvider, { target: '?.bemdecl.js' }],
 
             // DEV ONLY --------------------------------------------------------
-            [techs.fileProvider, { target: '?.bemjson.js' }],
-            [techs.bemjsonToBemdecl],
+            // [techs.fileProvider, { target: '?.bemjson.js' }],
+            // [techs.bemjsonToBemdecl],
             // -----------------------------------------------------------------
 
             [enbBemTechs.levels, { levels: levels }],
