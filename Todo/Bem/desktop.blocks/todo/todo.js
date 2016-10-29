@@ -19,12 +19,13 @@ provide(BEMDOM.decl(this.name, {
         },
     },
 
-    _addItem: function (text) {
+    _addItem: function () {
       var _this = this;
+      var text = _this._text.getVal();
       var xhr = $.ajax({
         url: 'http://todo.ecm7.ru/Home/Add',
         method: 'GET',
-        data: { text: _this._text.getVal() }
+        data: { text: text }
       });
 
       xhr.success(function (id) {
