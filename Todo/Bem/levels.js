@@ -1,7 +1,7 @@
 ﻿module.exports = [
     // bem-core
-    //{ path: 'libs/bem-core/common.blocks', check: false },
-    //{ path: 'libs/bem-core/desktop.blocks', check: false },
+    { path: 'libs/bem-core/common.blocks', check: false },
+    { path: 'libs/bem-core/desktop.blocks', check: false },
 
     // bem-components
     //{ path: 'libs/bem-components/common.blocks', check: false },

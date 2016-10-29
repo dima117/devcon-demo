@@ -6,7 +6,11 @@
         stylus: require('enb-stylus/techs/stylus'),
         browserJs: require('enb-js/techs/browser-js'),
         bemhtml: require('enb-bemxjst/techs/bemhtml'),
-        borschik: require('enb-borschik/techs/borschik')
+        borschik: require('enb-borschik/techs/borschik'),
+        // DEV ONLY ------------------------------------------------------------
+        // bemjsonToHtml: require('enb-bemxjst/techs/bemjson-to-html'),
+        // bemjsonToBemdecl: require('enb-bem-techs/').bemjsonToBemdecl
+        // ---------------------------------------------------------------------
     };
 
 module.exports = function(config) {
@@ -16,6 +20,12 @@ module.exports = function(config) {
         nodeConfig.addTechs([
             // essential
             [techs.fileProvider, { target: '?.bemdecl.js' }],
+
+            // DEV ONLY --------------------------------------------------------
+            // [techs.fileProvider, { target: '?.bemjson.js' }],
+            // [techs.bemjsonToBemdecl],
+            // -----------------------------------------------------------------
+
             [enbBemTechs.levels, { levels: levels }],
             [enbBemTechs.files],
             [enbBemTechs.deps],
@@ -53,6 +63,10 @@ module.exports = function(config) {
                 sourceSuffixes: ['bemhtml', 'bemhtml.js']
             }],
 
+            // DEV ONLY --------------------------------------------------------
+            // [techs.bemjsonToHtml],
+            // -----------------------------------------------------------------
+
             // js
             [techs.browserJs, { includeYM: true }],
             [techs.fileMerge, {
@@ -66,6 +80,6 @@ module.exports = function(config) {
 
         ]);
 
-        nodeConfig.addTargets(['?.bemhtml.js', '?.min.css', '?.min.js']);
+        nodeConfig.addTargets([/*'?.html', */'?.bemhtml.js', '?.min.css', '?.min.js']);
     });
 };

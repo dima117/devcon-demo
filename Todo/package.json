@@ -12,7 +12,7 @@
   "devDependencies": {
     "enb": "^1.4.1",
     "enb-bem-techs": "^2.2.1",
-    "enb-bemxjst": "^8.2.0",
+    "enb-bemxjst": "7.0.4",
     "enb-borschik": "^2.4.0",
     "enb-js": "^1.1.0",
     "enb-stylus": "^2.4.0"
