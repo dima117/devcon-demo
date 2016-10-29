@@ -98,7 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bem\.enb\make.js" />
+    <Content Include="Bem\desktop.blocks\root\root.bemhtml.js" />
+    <Content Include="Bem\desktop.blocks\root\root.deps.js" />
     <Content Include="Bem\desktop.blocks\todo-list\todo-list.bemhtml.js" />
+    <Content Include="Bem\desktop.blocks\todo\todo.bemhtml.js" />
+    <Content Include="Bem\desktop.blocks\todo\todo.css" />
+    <Content Include="Bem\desktop.blocks\todo\todo.js" />
     <Content Include="Bem\desktop.bundles\default\default.bemdecl.js" />
     <Content Include="Bem\levels.js" />
     <Content Include="Bem\libs\bem-components\common.blocks\attach\attach.bemhtml.js" />

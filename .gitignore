@@ -258,3 +258,4 @@ Todo/Bem/*.bundles/*/*.deps.js
 Todo/Bem/*.bundles/*/*.bemhtml.js
 Todo/Bem/*.bundles/*/*.bemhtml.bemdecl.js
 !Todo/Bem/*.bundles/*/default.bemdecl.js
+Todo/yarn.lock

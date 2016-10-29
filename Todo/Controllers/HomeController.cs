@@ -27,10 +27,15 @@ namespace Todo.Controllers
                 return Application["TodoItems"] as List<TodoItem>;
             }
         }
-        
+
         public ActionResult Index()
         {
-            return new BemhtmlResult(new { block = "root", items = TodoItems });
+            return new BemhtmlResult(new
+            {
+                block = "root",
+                bundleBasePath = Url.Content("~/Bem/desktop.bundles/default/"),
+                items = TodoItems
+            });
         }
 
         public ActionResult Add(string text)
