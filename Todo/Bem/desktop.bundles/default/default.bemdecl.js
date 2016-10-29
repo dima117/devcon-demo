@@ -1,3 +1,5 @@
-﻿exports.blocks = [
-    { name: 'todo-list' }
+exports.blocks = [
+    {
+        "name": "root"
+    }
 ];

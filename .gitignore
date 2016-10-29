@@ -250,4 +250,11 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-Todo/Bem/.enb/tmp/cache.json
+Todo/Bem/.enb/tmp
+Todo/Bem/*.bundles/*/*.js
+Todo/Bem/*.bundles/*/*.css
+Todo/Bem/*.bundles/*/*.html
+Todo/Bem/*.bundles/*/*.deps.js
+Todo/Bem/*.bundles/*/*.bemhtml.js
+Todo/Bem/*.bundles/*/*.bemhtml.bemdecl.js
+!Todo/Bem/*.bundles/*/default.bemdecl.js
