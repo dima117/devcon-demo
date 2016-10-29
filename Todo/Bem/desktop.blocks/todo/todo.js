@@ -13,7 +13,7 @@ provide(BEMDOM.decl(this.name, {
                 this._list = this.findBlockInside('todo-list');
 
                 this._add.on('click', function () {
-                  this._addItem(this._text.getVal());
+                  this._addItem();
                 }, this);
             }
         },
@@ -24,7 +24,7 @@ provide(BEMDOM.decl(this.name, {
       var xhr = $.ajax({
         url: 'http://todo.ecm7.ru/Home/Add',
         method: 'GET',
-        data: { text: text }
+        data: { text: _this._text.getVal() }
       });
 
       xhr.success(function (id) {
@@ -36,6 +36,7 @@ provide(BEMDOM.decl(this.name, {
             content: escape.html(text)
           })
         );
+        _this._text.setVal('');
       });
     }
 }));
