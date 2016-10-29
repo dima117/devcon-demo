@@ -16,6 +16,7 @@
           },
           {
             block: 'todo',
+            js: { add: this.ctx.urlAdd },
             items: this.ctx.items
           }
         ]
