@@ -45,6 +45,7 @@ namespace Todo.Controllers
             {
                 block = "root",
                 bundleBasePath = Url.Content("~/Bem/desktop.bundles/default/"),
+                urlAdd = Url.Action("Add"),
                 items = TodoItems.Select(GetItemModel).ToArray()
             };
 
