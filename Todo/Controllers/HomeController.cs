@@ -28,21 +28,36 @@ namespace Todo.Controllers
             }
         }
 
-        public ActionResult Index()
+        private object GetItemModel(TodoItem item)
         {
-            return new BemhtmlResult(new
+            return new {
+                id = item.Id,
+                text = item.Text,
+                done = item.Done,
+                urlDelete = Url.Action("Delete", new { id = item.Id }),
+                urlSetState = Url.Action("SetState", new { id = item.Id })
+            };
+        }
+
+        public ActionResult Index(bool json = false)
+        {
+            var bemjson = new
             {
                 block = "root",
                 bundleBasePath = Url.Content("~/Bem/desktop.bundles/default/"),
-                items = TodoItems
-            });
+                items = TodoItems.Select(GetItemModel).ToArray()
+            };
+
+            return json 
+                ? (ActionResult)Json(bemjson, JsonRequestBehavior.AllowGet)
+                : new BemhtmlResult(bemjson);
         }
 
         public ActionResult Add(string text)
         {
             var item = new TodoItem { Id = Guid.NewGuid(), Text = text, Done = false };
             TodoItems.Add(item);
-            return Json(item.Id, JsonRequestBehavior.AllowGet);
+            return Json(GetItemModel(item), JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult SetState(Guid id, bool done = false)
