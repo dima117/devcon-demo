@@ -30,7 +30,7 @@ namespace Todo.Controllers
         
         public ActionResult Index()
         {
-            return new BemhtmlResult(new { block = "todo-list", items = TodoItems });
+            return new BemhtmlResult(new { block = "root", items = TodoItems });
         }
 
         public ActionResult Add(string text)

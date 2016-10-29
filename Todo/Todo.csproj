@@ -1059,6 +1059,7 @@
     <Content Include="Bem\libs\bem-components\common.blocks\attach\attach.en.md" />
     <Content Include="Bem\libs\bem-components\CHANGELOG.ru.md" />
     <Content Include="Bem\libs\bem-components\CHANGELOG.md" />
+    <None Include="Properties\PublishProfiles\Todo.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
