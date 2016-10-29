@@ -22,8 +22,8 @@ module.exports = function(config) {
             [techs.fileProvider, { target: '?.bemdecl.js' }],
 
             // DEV ONLY --------------------------------------------------------
-            // [techs.fileProvider, { target: '?.bemjson.js' }],
-            // [techs.bemjsonToBemdecl],
+            [techs.fileProvider, { target: '?.bemjson.js' }],
+            [techs.bemjsonToBemdecl],
             // -----------------------------------------------------------------
 
             [enbBemTechs.levels, { levels: levels }],
@@ -42,27 +42,6 @@ module.exports = function(config) {
             // bemhtml
             [techs.bemhtml, { sourceSuffixes: ['bemhtml', 'bemhtml.js'] }],
 
-            // client bemhtml
-            [enbBemTechs.depsByTechToBemdecl, {
-                target: '?.bemhtml.bemdecl.js',
-                sourceTech: 'js',
-                destTech: 'bemhtml'
-            }],
-            [enbBemTechs.deps, {
-                target: '?.bemhtml.deps.js',
-                bemdeclFile: '?.bemhtml.bemdecl.js'
-            }],
-            [enbBemTechs.files, {
-                depsFile: '?.bemhtml.deps.js',
-                filesTarget: '?.bemhtml.files',
-                dirsTarget: '?.bemhtml.dirs'
-            }],
-            [techs.bemhtml, {
-                target: '?.browser.bemhtml.js',
-                filesTarget: '?.bemhtml.files',
-                sourceSuffixes: ['bemhtml', 'bemhtml.js']
-            }],
-
             // DEV ONLY --------------------------------------------------------
             // [techs.bemjsonToHtml],
             // -----------------------------------------------------------------
@@ -71,7 +50,7 @@ module.exports = function(config) {
             [techs.browserJs, { includeYM: true }],
             [techs.fileMerge, {
                 target: '?.js',
-                sources: ['?.browser.js', '?.browser.bemhtml.js']
+                sources: ['?.browser.js', '?.bemhtml.js']
             }],
 
             // optimization
