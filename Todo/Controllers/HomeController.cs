@@ -21,7 +21,12 @@ namespace Todo.Controllers
             {
                 if (!(Application["TodoItems"] is List<TodoItem>))
                 {
-                    Application["TodoItems"] = new List<TodoItem>();
+                    Application["TodoItems"] = new List<TodoItem> {
+                        new TodoItem { Text = "Создать бэкенд", Done = true },
+                        new TodoItem { Text = "Написать шаблоны" },
+                        new TodoItem { Text = "Написать CSS" },
+                        new TodoItem { Text = "Написать JavaScript" }
+                    };
                 }
 
                 return Application["TodoItems"] as List<TodoItem>;
@@ -56,7 +61,7 @@ namespace Todo.Controllers
 
         public ActionResult Add(string text)
         {
-            var item = new TodoItem { Id = Guid.NewGuid(), Text = text, Done = false };
+            var item = new TodoItem { Text = text, Done = false };
             TodoItems.Add(item);
             return Json(GetItemModel(item), JsonRequestBehavior.AllowGet);
         }
