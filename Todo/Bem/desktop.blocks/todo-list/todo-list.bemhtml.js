@@ -6,7 +6,7 @@ block('todo-list')(
     return this.ctx.items.map(function (item) {
       return {
         block: 'todo-item',
-        js: { id: item.id, delete: item.urlDelete, state: item.urlSetState },
+        // js: { id: item.id, delete: item.urlDelete, state: item.urlSetState },
         mods: { done: item.done },
         content: item.text
       };
